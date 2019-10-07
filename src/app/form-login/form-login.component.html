@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Livvic:500&display=swap" rel="stylesheet">
+
+    <title>Login Form</title>
+</head>
+
+<body>
+
+<div class="login-form">
+
+    <div class="login-container shadow">
+
+        <div class="row">
+            
+        </div>
+
+            <form class="login form col s12" [formGroup]="loginForm" (ngSubmit)="onSaveForm()" >
+          
+
+                    <div class="input-field col s12">
+                        <input id="name" type="text" formControlName="name" class="validate" placeholder="Name">
+                        <div  class="alert-danger" *ngIf="name.invalid && (name.dirty || name.touched )">
+                            <div class="container-error-massage" *ngIf="name.errors.required">
+                                <div>Name is required </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input id="password" type="password" formControlName="password" lass="validate"
+                            placeholder="password">
+                        <div class="alert-danger"  *ngIf="password.invalid && (password.dirty || password.touched )">
+                            <div class="container-error-massage"  *ngIf="password.errors.required">
+                                <div>Password is required </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12">
+                        <button type="submit" value="LogIn"
+                            class="btn btn-small login-btn waves-effect white-text">login</button>
+                    </div>
+
+
+            </form>
+
+
+
+
+
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
